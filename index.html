@@ -52,7 +52,7 @@
           const tenant = document.getElementById("tenant").value;
 
           const clientId = "78e17ed435024f9abd7172e3938ae7cd";
-          const redirectUri = `https://${region}-integration.knowmax.ai/${tenant}/talkdesk/auth/callback`;
+          const redirectUri = `https://${region}-integration.knowmax.ai/v2/${tenant}`;
           const state = btoa(JSON.stringify({ region, tenant }));
 
           const authUrl =
