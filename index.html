@@ -54,7 +54,7 @@
           const clientId = "78e17ed435024f9abd7172e3938ae7cd";
 
           const redirectUri = "https://in-integration.knowmax.ai/v2/ksoft";
-          const state = btoa(JSON.stringify({ region, tenant }));
+          <!-- const state = btoa(JSON.stringify({ region, tenant }));
 
           const params = new URLSearchParams({
             response_type: "code",
@@ -66,9 +66,9 @@
 
           const talkdeskAuthBaseUrl = `https://oauth.talkdesk.com/authorize`;
 
-          const authUrl = `${talkdeskAuthBaseUrl}?${params.toString()}`;
+          const authUrl = `${talkdeskAuthBaseUrl}?${params.toString()}`; -->
 
-          window.location.href = authUrl;
+          window.location.href = redirectUri;
         });
     </script>
   </body>
