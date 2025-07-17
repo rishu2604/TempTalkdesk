@@ -52,18 +52,8 @@
           const tenant = document.getElementById("tenant").value;
 
           const clientId = "78e17ed435024f9abd7172e3938ae7cd";
-          const redirectUri =
-            "https://in-integration.knowmax.ai/v2/ksoft/talkdesk/auth/callback";
+          const redirectUri = "https://in-integration.knowmax.ai/v2/ksoft";
           const state = btoa(JSON.stringify({ region, tenant }));
-
-          const authUrl =
-            `https://oauth.talkdesk.com/authorize?response_type=code` +
-            `&client_id=${clientId}` +
-            `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-            `&scope=apps:read apps:write events:read account:read users:read` +
-            `&state=${state}`;
-
-          window.location.href = authUrl;
         });
     </script>
   </body>
