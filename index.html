@@ -53,9 +53,20 @@
 
           const clientId = "78e17ed435024f9abd7172e3938ae7cd";
 
-          const redirectUri = "https://in-integration.knowmax.ai/v2/ksoft";
+          const redirectUri =
+            "https://9e224157ba48.ngrok-free.app/oauth/callback";
 
-          window.location.href = redirectUri;
+          const state = "your-random-csrf-token";
+
+          const authUrl =
+            `https://knowmax-dev.talkdeskid.com/oauth/authorize?` +
+            `client_id=${clientId}` +
+            `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+            `&response_type=code` +
+            `&scope=apps:read apps:write events:read account:read` +
+            `&state=${state}`;
+
+          window.location.href = authUrl;
         });
     </script>
   </body>
