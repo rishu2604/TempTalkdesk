@@ -40,6 +40,8 @@
           Connect to Talkdesk
         </button>
       </form>
+
+      <div id="message" class="hidden"></div>
     </div>
 
     <script>
@@ -51,22 +53,11 @@
           const region = document.getElementById("region").value;
           const tenant = document.getElementById("tenant").value;
 
-          const clientId = "78e17ed435024f9abd7172e3938ae7cd";
+          const msg = document.getElementById("message");
 
-          const redirectUri =
-            "https://b5a3055b6b1a.ngrok-free.app/oauth/callback";
-
-          const state = "your-random-csrf-token";
-
-          const authUrl =
-            `https://knowmax-dev.talkdeskid.com/oauth/authorize?` +
-            `client_id=${clientId}` +
-            `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-            `&response_type=code` +
-            `&scope=apps:read apps:write events:read account:read` +
-            `&state=${state}`;
-
-          window.location.href = authUrl;
+          // show a loading message
+          msg.classList.remove("hidden");
+          msg.textContent = "Installing… please wait.";
         });
     </script>
   </body>
